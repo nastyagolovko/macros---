@@ -1,5 +1,64 @@
+; 1. Определите макрос, который возвращает свой вызов
+
+(defmacro mac (x)
+
+  `'(mac ,x)
+
+)
 
 
+
+(print(mac a)) ; (mac a)
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+; 2) Определить макрос pop-stack
+
+
+
+(defmacro pop-stack (stack)
+
+	`(let ((first))
+
+		(setq first (car ,stack))
+
+		(setq ,stack (cdr ,stack))
+
+		first
+
+	)
+
+)
+
+
+
+(setq stack `(1 2 3))
+
+
+
+(print (pop-stack stack)) ; 1
+
+(print (pop-stack stack)) ; 2
+
+(print (pop-stack stack)) ; 3
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+;3. Определите лисповскую форму (IF условие p q) в виде макроса.
+
+(defmacro My-If (condition then else)
+
+   `(cond 
+
+           (,condition ,then)
+
+           (t ,else)
+
+    )
+
+)
+
+ 
+(print(My-If (> 15 6) 'p 'q)) ; P
+
+(print(My-If (> 6 15) 'p 'q)) ; Q
 
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

@@ -1,3 +1,8 @@
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ;5. Определите в виде макроса форму (REPEAT e UNTIL p) паскалевского типа.
 
 (defmacro repeat (body condition)
@@ -15,9 +20,6 @@
 (setq i 10)
 
 (repeat (setq  i (- i 1)) (equal i 0))
-
-
-
 
 
 ;9 
@@ -39,8 +41,6 @@
 ;1 
 
 ;0
-
-
 
 (print (MACROEXPAND `(repeat (setq  i (- i 1)) (equal i 0))))
 
